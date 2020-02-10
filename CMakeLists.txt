@@ -97,8 +97,7 @@ set_target_properties(artyfx PROPERTIES PREFIX "")
 # add the install targets
 install (TARGETS artyfx    DESTINATION lib/lv2/artyfx.lv2/)
 
-FILE(GLOB modF "artyfx.lv2/modgui/*")
 FILE(GLOB ttls "artyfx.lv2/*.ttl"   )
 
-install(FILES     ${modF} DESTINATION lib/lv2/artyfx.lv2/modgui/)
+install(DIRECTORY artyfx.lv2/modgui DESTINATION lib/lv2/artyfx.lv2/)
 install(FILES     ${ttls} DESTINATION lib/lv2/artyfx.lv2/)
